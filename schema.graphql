@@ -1,0 +1,5 @@
+type hdb_status @table {
+    id: Int @primaryKey
+    status: Int
+    message: Any
+}
