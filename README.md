@@ -2,6 +2,8 @@
 This component allows for dynamically returning and setting of an instance's status based on a record in the database.  This can be used by external systems to know the availability of a specific node.
 The status of the node can be set to `200` via `POST` or `404` via `DELETE`.
 
+NOTE: Replication for the `data.hdb_status` table should NOT be established.  If the data replicates then all other nodes would be unintentionally set to offline/online.
+
 ## Usage
 This component exposes a route named `status`, to interface with the route the are 3 HTTP methods:
 
