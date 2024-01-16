@@ -12,7 +12,7 @@ if (server.workerIndex == 0) {
   })();
 }
 
-export class Status extends Resource {
+export class status extends Resource {
   allowRead() {
     return true;
   }

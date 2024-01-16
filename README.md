@@ -5,14 +5,14 @@ The status of the node can be set to `200` via `POST` or `404` via `DELETE`.
 NOTE: Replication for the `data.hdb_status` table should NOT be established.  If the data replicates then all other nodes would be unintentionally set to offline/online.
 
 ## Usage
-This component exposes a route named `Status`, to interface with the route the are 3 HTTP methods:
+This component exposes a route named `status`, to interface with the route the are 3 HTTP methods:
 
 ### GET
 This method is unauthenticated and returns the current status and message.
 
 Sample curl:
 ```shell
-curl --location 'https://harperdbinstance.com:9926/Status'
+curl --location 'https://harperdbinstance.com:9926/status'
 ```
 
 ### POST
@@ -20,7 +20,7 @@ This method is used to set the status of the node to 200. This method is authent
 
 Sample curl:
 ```shell
-curl --location --request POST 'https://harperdbinstance.com:9926/Status' --header 'Authorization: Basic XXXXXXXXXXXX'
+curl --location --request POST 'https://harperdbinstance.com:9926/status' --header 'Authorization: Basic XXXXXXXXXXXX'
 ```
 
 ### DELETE
@@ -28,5 +28,5 @@ This method is used to set the status of the node to 404. This method is authent
 
 Sample curl:
 ```shell
-curl --location --request DELETE 'https://harperdbinstance.com:9926/Status' --header 'Authorization: Basic XXXXXXXXXXXX'
+curl --location --request DELETE 'https://harperdbinstance.com:9926/status' --header 'Authorization: Basic XXXXXXXXXXXX'
 ```
