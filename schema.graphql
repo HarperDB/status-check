@@ -1,5 +1,5 @@
-type hdb_status @table {
-    id: Int @primaryKey
-    status: Int
-    message: Any
+type hdb_status @table(replicate: false) {
+	id: Int @primaryKey
+	status: Int
+	message: Any
 }
