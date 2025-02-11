@@ -1,5 +1,7 @@
 # @harperdb/status-check
 
+![NPM Version](https://img.shields.io/npm/v/%40harperdb%2Fstatus-check)
+
 This component enables controlling an instance's status based on a record in the database. This can be used by external systems to know the availability of a specific node.
 
 The status of the node can be
