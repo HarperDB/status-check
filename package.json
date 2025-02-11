@@ -1,12 +1,6 @@
 {
+  "name": "@harperdb/status-check",
   "type": "module",
-  "name": "status-check",
   "version": "1.0.1",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC"
+  "description": "A Harper component for checking the status of the HarperDB instance."
 }

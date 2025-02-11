@@ -1,15 +1,12 @@
-"use strict";
-
 const { hdb_status } = tables;
 const DEFAULT_200_MSG = "Status endpoint is reporting for duty.";
 const DEFAULT_404_MSG = "Status endpoint is reporting downtime.";
 
 if (server.workerIndex == 0) {
-  (async () => {
-    let record = await hdb_status.get(1);
-    if (!record)
-      await hdb_status.put({ id: 1, status: 200, message: DEFAULT_200_MSG });
-  })();
+  let record = await hdb_status.get(1);
+  if (!record) {
+    await hdb_status.put({ id: 1, status: 200, message: DEFAULT_200_MSG });
+  }
 }
 
 export class status extends Resource {
@@ -32,11 +29,11 @@ export class status extends Resource {
     }
   }
 
-  async post(data) {
+  async post() {
     await hdb_status.put({ id: 1, status: 200, message: DEFAULT_200_MSG });
   }
 
-  async delete(data) {
+  async delete() {
     await hdb_status.put({ id: 1, status: 404, message: DEFAULT_404_MSG });
   }
 }
